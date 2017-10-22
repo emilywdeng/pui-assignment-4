@@ -14,108 +14,103 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Ionicons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- javascript -->
-    <script src="main.js" type="text/javascript"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Javascript -->
+    <script type="text/javascript" src="./main.js"></script>
 </head>
 
 <body>
     <!-- top black bar -->
     <header>
-    <nav class = "top-bar">
-        <div> <p>
-            <a href="#">Product Locator</a>
-            |
-            <a href="#">Sign In</a>
-            |
-            <a href ="#">Cart (0)</a>
-            <i class="fa fa-shopping-cart" style="font-size:20px;color:white;"></i>
-        </p> </div>
-    </nav>
-    </header>
+        <nav class = "top-bar">
+            <div> <p>
+                <a href="#">Product Locator</a>
+                |
+                <a href="#">Sign In</a>
+                |
+                <a href ="shopping-cart.html" class="top-bar-cart-txt">Cart (0)</a>
+                    <a href ="shopping-cart.html"><i class="fa fa-shopping-cart" style="font-size:20px;color:white;"></i></a>
+                </p> </div>
+            </nav>
+        </header>
 
-    <!-- main menu -->
-    <div class = "page-header">
-        <!-- small page logo -->
-        <a href = "index.html"><div class = "page-logo">
-            <i class = "fa fa-paw"></i>
-            <p class = "page-name">Muddy Paws Adventure Gear</p>
-        </div></a>
-        <!-- menu links -->
-        <h2><ul class = "header-nav">
-            <li><a href = "shop.html">SHOP</a></li>
-            <li><a href = "#">INSPIRATION</a></li>
-            <li><a href = "#">ABOUT</a></li>
-        </ul></h2>
-        <!-- search bar -->
-        <div class = "search-bar">
-            <p>Search</p>
-            <i class="material-icons">search</i>
+        <!-- main menu -->
+        <div class = "page-header">
+            <!-- small page logo -->
+            <a href = "index.html"><div class = "page-logo">
+                <i class = "fa fa-paw"></i>
+                <p class = "page-name">Muddy Paws Adventure Gear</p>
+            </div></a>
+            <!-- menu links -->
+            <h2><ul class = "header-nav">
+                <li><a href = "shop.html" class = "selected-page">SHOP</a></li>
+                <li><a href = "#">INSPIRATION</a></li>
+                <li><a href = "#">ABOUT</a></li>
+            </ul></h2>
+            <!-- search bar -->
+            <div class = "search-bar">
+                <p>Search</p>
+                <i class="material-icons">search</i>
+            </div>
         </div>
-    </div>
 
-    <!-- break line -->
-    <hr>
+        <!-- break line -->
+        <hr>
 
-    <!-- begin body of page -->
-    <!-- page title link -->
-    <h3><a href = "#">SHOP  //  All  Products</a></h3>
+        <!-- begin body of page -->
+        <!-- page title link -->
+        <h3><a href = "#">SHOP  //  All  Products</a></h3>
 
-    <div id = "shop-wrapper">
-        <!-- filter aside -->
-        <aside class = "filter-aside">
-            Filter By:
-            <ul class = "filter-options">
-                <li><a href = "#"><div>Animal </div><i class="icon ion-chevron-down"></i></a></li>
-                <li><a href = "#">Color <i class="icon ion-chevron-down"></i></a></li>
-                <li><a href = "#">Gear <i class="icon ion-chevron-down"></i></a></li>
-            </ul>
-        </aside>
+        <div id = "shop-wrapper">
+            <!-- filter aside -->
+            <aside class = "filter-aside">
+                Filter By:
+                <ul class = "filter-options">
+                    <li><a href = "#"><div>Animal </div><i class="icon ion-chevron-down"></i></a></li>
+                    <li><a href = "#">Color <i class="icon ion-chevron-down"></i></a></li>
+                    <li><a href = "#">Gear <i class="icon ion-chevron-down"></i></a></li>
+                </ul>
+            </aside>
 
-        <!-- main product list -->
-        <main class = "product-list">
-            <!-- 1 dog harness -->
-            <a href = "dog-harness-detail.html"><div class = "product-list-item">
-                <!-- product image -->
-                <div class = "image-frame"><img src="images/dogharness.jpg" ></div>
-                <!-- color swatch image -->
-                <img src="images/color-swatch.png">
-                <!-- product info -->
-                <p class = "product-list-title">Dog Harness</p>
-                <p class = "product-list-price">$35.99</p>
-            </div></a>
-            <!-- 2 cat harness -->
-            <a href="#"><div class = "product-list-item">
-                <!-- product image -->
-                <div class = "image-frame"><img src="images/catharness.jpg"></div>
-                <!-- color swatch image -->
-                <img src="images/color-swatch.png">
-                <!-- product info -->
-                <p class = "product-list-title">Cat Harness</p>
-                <p class = "product-list-price">$35.99</p>
-            </div></a>
-            <!-- 3 storage attachement -->
-            <a href="#"><div class = "product-list-item">
-                <!-- product image -->
-                <div class = "image-frame"><img src="images/foodattach.jpg"></div>
-                <!-- color swatch image -->
-                <img src="images/color-swatch.png">
-                <!-- product info -->
-                <p class = "product-list-title">Storage Attachment</p>
-                <p class = "product-list-price">$79.99</p>
-            </div></a>
-            <!-- 4 gps collar -->
-            <a href="#"><div class = "product-list-item">
-                <!-- product image -->
-                <div class = "image-frame"><img src="images/gpscollar.jpg"></div>
-                <!-- color swatch image -->
-                <img src="images/color-swatch.png">
-                <!-- product info -->
-                <p class = "product-list-title">GPS Tracker Collar</p>
-                <p class = "product-list-price">$50.99</p>
-            </div></a>
-        </main>
-    </div>
+            <!-- main product list -->
+            <main class = "product-list">
+                <!-- 1 dog harness -->
+                <a href = "dog-harness-detail.html"><div class = "product-list-item">
+                    <!-- product image -->
+                    <div class = "image-frame"><img src="images/dogharness.jpg" ></div>
+                    <!-- product info -->
+                    <p class = "product-list-title">Dog Harness</p>
+                    <p class = "product-list-price">$35.99</p>
+                </div></a>
+                <!-- 2 cat harness -->
+                <a href="#"><div class = "product-list-item">
+                    <!-- product image -->
+                    <div class = "image-frame"><img src="images/catharness.jpg"></div>
+                    <!-- product info -->
+                    <p class = "product-list-title">Cat Harness</p>
+                    <p class = "product-list-price">$35.99</p>
+                </div></a>
+                <!-- 3 storage attachement -->
+                <a href="#"><div class = "product-list-item">
+                    <!-- product image -->
+                    <div class = "image-frame"><img src="images/foodattach.jpg"></div>
+                    <!-- product info -->
+                    <p class = "product-list-title">Storage Attachment</p>
+                    <p class = "product-list-price">$79.99</p>
+                </div></a>
+                <!-- 4 gps collar -->
+                <a href="#"><div class = "product-list-item">
+                    <!-- product image -->
+                    <div class = "image-frame"><img src="images/gpscollar.jpg"></div>
+                    <!-- product info -->
+                    <p class = "product-list-title">GPS Tracker Collar</p>
+                    <p class = "product-list-price">$50.99</p>
+                </div></a>
+            </main>
+        </div>
 
-</body>
-
-</html>
+    </body>
+    <!-- end body -->
+    </html>
+    <!-- end html doc -->
