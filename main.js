@@ -21,8 +21,8 @@ function item(color, size, qty, price, image) {
 }
 
 // GLOBAL VARIABLES
-var color = "night-moon";
-var size = "small";
+var color = "Night Moon";
+var size = "Small";
 var qty = 1;
 var price = "$35.99"
 var image = "images/dogharness.jpg";
@@ -30,13 +30,16 @@ var localCartQty = 0;
 var cartArray = [];
 
 
+//on page load
 $(document).ready(function() {
+    //update cart count
     displayCart();
 
     //change cart display if cart items added
     if (parseInt(localStorage.getItem("cartQty")) > 0) {
-        //toggle to hide default table row
+        //toggle to hide default table row showing empty cart
         $("#empty-cart").toggle();
+
         //get array from local storage
         var array = JSON.parse(localStorage.getItem("cartArray"));
 
@@ -45,19 +48,19 @@ $(document).ready(function() {
             //get current array item
             var currentItem = array[i];
             var content1 = '<tr class = "cart-row"> <!-- image --> <td class = "table-content"> <div class = "cart-image-frame"><img src="';
-            //images/dogharness.jpg
+            //get image
             var content2 = currentItem.image;
             var content3 = '" ></div> </td> <!-- desc --> <td class = "table-content"> <p class = "cart-item-title">Dog Harness</p> <p class = "cart-item-deet">Color: ';
-            //Night Moon
+            //get color
             var content4 = currentItem.color;
             var content5 = ' <br>Size: ';
-            //Medium
+            //get size
             var content6 = currentItem.size;
             var content7 = '</p> </td> <!-- quantity --> <td class = "table-content"> <div class = "quant-wrapper"> <button class = "select-quant-dark add-qty"><a>+</a></button> <button class = "select-quant-light"><a class="qty">';
-            //1
+            //get quantity
             var content8 = currentItem.qty;
             var content9 = '</a></button> <button class = "select-quant-dark sub-qty"><a>-</a></button> </div> </td> <!-- price --> <td class = "table-content"><p class = "cart-price">';
-            //$35.99
+            //get price
             var content10 = currentItem.price;
             var content11 = '</p></td> </tr> <tr> <td colspan ="4" class = "cart-row-controls"> <button class = "cart-control" id="edit"><a>EDIT</a></button> <button class = "cart-control" id = "remove"><a>REMOVE</a></button> </td> </tr>';
             //concatenate content together
@@ -111,8 +114,11 @@ $(document).on("click", "#remove", function() {
 
 // SELECTING COLOR
 $(document).on("click", "#strawberry", function() {
+  //change image
   $("#detail-image").attr("src", "images/dogharness-strawberry.jpg");
+  //change text
   $(".select-color").text("1. Select Color: Strawberry");
+  //store selection locally
   color = "Strawberry";
   image = "images/dogharness-strawberry.jpg";
 });
@@ -154,13 +160,18 @@ $(document).on("click", "#fire-orange", function() {
 
 // SELECTING SIZE
 $(document).on("click", "#tiny", function() {
+  //change text
   $(".select-size-label").text("2. Select Size: Tiny");
+  //change image
   $("#detail-image").attr("src", "images/tinyharness.jpg");
+  //add css to selected button and remove from others
   $("#tiny").addClass("selected-button");
   $("#small").removeClass("selected-button");
   $("#medium").removeClass("selected-button");
   $("#large").removeClass("selected-button");
+  //store selection locally
   size = "Tiny";
+  //change text of price
   $(".detail-price").text("$30.99");
   price = "$30.99";
   image = "images/tinyharness.jpg";
@@ -207,27 +218,34 @@ $(document).on("click", "#large", function() {
 
 // SELECTING QUANTITY
 $(document).on("click", ".add-qty", function() {
+    //increment
     qty++;
+    //change text
     $(".qty").text(qty);
 });
 
 $(document).on("click", ".sub-qty", function() {
+    //decrement
     qty--;
+    //make sure doesn't go below 1
     if (qty < 1) {
         qty = 1;
     }
+    //change text
     $(".qty").text(qty);
 });
 
 // UPDATE CART
 function displayCart(){
+    //check if cart empty
     if (localStorage.getItem("cartQty") === null) {
+        //then save local storage as 0
         localStorage.setItem("cartQty", 0);
     }
     //declare strings
     var part1 = "Cart (";
         var part3 = ")";
-    //concatenate strings
+    //concatenate strings and get local storage count
     var newText = part1.concat(localStorage.getItem("cartQty"), part3);
     //display cart text
     $(".top-bar-cart-txt").text(newText);
